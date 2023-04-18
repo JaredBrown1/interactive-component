@@ -1,16 +1,43 @@
+import Button from './Button';
+import Image from 'next/image';
+import { Overpass } from 'next/font/google';
+
+const overpass = Overpass({
+  subsets: ['latin'],
+  weight: ['700'],
+  variable: '--font-overpass',
+});
+
 const Rating = () => {
   return (
-    <form>
+    <form className="w-96 h-96 p-9 bg-gradient-to-r from-slate-900 to-slate-700 text-left rounded-lg flex flex-col">
       <div>
-        <div>star</div>
+        <div className="bg-gray-800 w-12 h-12 rounded-full flex flex-col justify-center align-middle pl-4">
+          <Image
+            src="/images/icon-star.svg"
+            alt="star"
+            width={16}
+            height={16}
+          />
+        </div>
       </div>
-      <h1>How did we do?</h1>
-      <p>
+      <h1 className={`text-3xl leading-loose ${overpass.variable}`}>
+        How did we do?
+      </h1>
+      <p className="leading-relaxed text-base text-gray-400  ">
         Please let us know how we did with your support request. All feedback is
         appreciated to help us improve our offering!
       </p>
-      <div>Number ratings here</div>
-      <button>Submit</button>
+      <div className="py-8">
+        <Button number={1} />
+        <Button number={2} />
+        <Button number={3} />
+        <Button number={4} />
+        <Button number={5} />
+      </div>
+      <button className="w-70 h-11  bg-orange-600 rounded-full text-base tracking-widest ">
+        SUBMIT
+      </button>
     </form>
   );
 };
