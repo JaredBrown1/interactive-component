@@ -10,7 +10,7 @@ const overpass = Overpass({
 
 const Rating = () => {
   return (
-    <form className="w-96 h-96 p-9 bg-gradient-to-r from-slate-900 to-slate-700 text-left rounded-lg flex flex-col">
+    <form className="w-96 h-98 p-9 bg-gradient-to-r from-slate-900 to-slate-700 text-left rounded-lg flex flex-col">
       <div>
         <div className="bg-gray-800 w-12 h-12 rounded-full flex flex-col justify-center align-middle pl-4">
           <Image
@@ -35,7 +35,7 @@ const Rating = () => {
         <Button number={4} />
         <Button number={5} />
       </div>
-      <button className="w-70 h-11  bg-orange-600 rounded-full text-base tracking-widest ">
+      <button className=" py-3 bg-orange-600 rounded-full text-base tracking-widest hover:bg-white hover:text-orange-600">
         SUBMIT
       </button>
     </form>
