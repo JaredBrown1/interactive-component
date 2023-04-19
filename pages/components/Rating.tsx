@@ -9,6 +9,10 @@ const overpass = Overpass({
 });
 
 const Rating = () => {
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+  };
+
   return (
     <form className="w-96 h-98 p-9 bg-gradient-to-r from-slate-900 to-slate-700 text-left rounded-lg flex flex-col">
       <div>
@@ -35,7 +39,11 @@ const Rating = () => {
         <Button number={4} />
         <Button number={5} />
       </div>
-      <button className=" py-3 bg-orange-600 rounded-full text-base tracking-widest hover:bg-white hover:text-orange-600">
+      <button
+        type="submit"
+        onSubmit={handleSubmit}
+        className=" py-3 bg-orange-600 rounded-full text-base tracking-widest hover:bg-white hover:text-orange-600"
+      >
         SUBMIT
       </button>
     </form>
